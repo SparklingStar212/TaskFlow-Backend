@@ -12,9 +12,8 @@ mongoose.connect(MongoDb_URI, {
 
 
 }).then(() => {
-  console.log('Connected to MongoDB');
 }).catch((error) => {
-  console.error('Error connecting to MongoDB:', error);
+  process.exitCode = 1;
 });
 
 const PORT = process.env.PORT;
@@ -29,5 +28,4 @@ app.use('/tasks', taskRoutes);
 app.use('/', AuthRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });

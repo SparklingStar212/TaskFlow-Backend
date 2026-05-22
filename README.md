@@ -52,6 +52,8 @@ node index.js
 
 Base path: `/tasks`
 
+All `/tasks` endpoints require an `Authorization: Bearer <token>` header from the login route.
+
 - `POST /tasks` - Create a task
 - `GET /tasks` - Get all tasks
 - `GET /tasks/:id` - Get a task by ID
